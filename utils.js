@@ -49,3 +49,20 @@ module.exports = {
   maximo,
   minimo,
 };
+
+// Calcula la mediana de una lista de números
+function mediana(numeros) {
+       if    (numeros.length === 0) return 0;
+
+  // Ordenar los números
+  const ordenados = [...numeros].sort((a, b) => a - b);
+  
+	const mitad = Math.floor(ordenados.length / 2);
+
+  // Si la cantidad es par promedia los dos del medio
+  if (ordenados.length % 2 === 0) {
+    return (ordenados[mitad - 1] + ordenados[mitad]) / 2;
+  } else {    return ordenados[mitad];
+  }
+}
+
